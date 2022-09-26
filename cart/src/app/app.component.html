@@ -1,0 +1,90 @@
+<h1>Shopping Cart</h1>
+
+<div class="shopping-cart">
+
+  <div class="column-labels">
+    <label class="product-image">Image</label>
+    <!-- <label class="product-details">Product</label> -->
+    <label class="product-price">Price</label>
+    <label class="product-quantity">Quantity</label>
+    <label class="product-removal">Add</label>
+    <label class="product-line-price">Total</label>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+      <img src="../assets/notebook.png">
+    </div>
+    <!-- <div class="product-details">
+      <div class="product-title">Dingo Dog Bones</div>
+      <p class="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for these things! I got curious once and ate one myself. I'm a fan.</p>
+    </div> -->
+    <div class="product-price">100</div>
+    <div class="product-quantity">
+      <input type="number" value="3" min="3" [(ngModel)]="bookCount">
+    </div>
+    <div class="product-removal">
+      <button class="add-product" (click)="addItem('book')">
+        Add
+      </button>
+    </div>
+    <div class="product-line-price">{{book}}</div>
+  </div>
+
+  <div class="product">
+    <div class="product-image">
+      <img src="../assets/sanitizer.jpg">
+    </div>
+    <!-- <div class="product-details">
+      <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
+      <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
+    </div> -->
+    <div class="product-price">250</div>
+    <div class="product-quantity">
+      <input type="number" value="10" min="10" [(ngModel)]="saniCount">
+    </div>
+    <div class="product-removal">
+      <button class="add-product" (click)="addItem('sanitizer')">
+        Add
+      </button>
+    </div>
+    <div class="product-line-price">{{sanitizer}}</div>
+  </div>
+  <div class="product">
+    <div class="product-image">
+      <img src="../assets/bag.jpg">
+    </div>
+    <!-- <div class="product-details">
+      <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
+      <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
+    </div> -->
+    <div class="product-price">1500</div>
+    <div class="product-quantity">
+      <input type="number" value="1" max="2" min="0" [(ngModel)]="bagCount">
+    </div>
+    <div class="product-removal">
+      <button class="add-product" (click)="addItem('bag')">
+        Add
+      </button>
+    </div>
+    <div class="product-line-price">{{bag}}</div>
+  </div>
+
+  <div class="totals">
+
+    <div class="totals-item totals-item-total">
+      <label>Total</label>
+      <div class="totals-value" id="cart-total">{{total}}</div>
+    </div>
+    <div class="totals-item" *ngIf="total>10000">
+      <button class="promo"(click)="addCode()">Use Promo Code</button>
+    </div>
+    <div class="totals-item" *ngIf="grandTotal>0">
+      <label>Grand Total</label>
+      <div class="totals-value" id="cart-tax">{{grandTotal}}</div>
+    </div>
+  </div>
+
+
+
+</div>
